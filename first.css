@@ -1,0 +1,27 @@
+/* Element Selector
+Class
+ID
+Group
+Universal
+ */
+
+
+/* h1 {
+    color: white;
+    background-color: red;
+} */
+
+#bulb {
+    height: 200px;
+    width: 200px;
+    border: 5px solid black;
+    border-radius: 50%;
+    margin: 100px;
+}
+
+#button {
+    padding: 20px;
+    border: 1px solid blue;
+    border-radius: 30px;
+    margin-left: 10rem;
+}
