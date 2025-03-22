@@ -28,31 +28,6 @@ board.after(endMessage);
 
 let someoneWon = false;
 
-for (let i = 0; i < squares.length; i++) {
-    squares[i].addEventListener('click', function () {
-        if (someoneWon) return;
-
-        if (squares[i].textContent !== "") return;
-
-        squares[i].textContent = currentPlayer;
-
-        if (checkWin()) {
-            someoneWon = true;
-            endMessage.textContent = `Game Over!! ${currentPlayer} wins`;
-            return;
-        }
-        if (checkTie()) {
-            someoneWon = true;
-            endMessage.textContent = "It's a tie!";
-            return;
-        }
-        currentPlayer = currentPlayer === players[0]
-            ? players[1] : players[0];
-
-        endMessage.textContent = `${currentPlayer}'s turn`;
-    });
-}
-
 function checkWin() {
     for (let i = 0; i < winning_combination.length; i++) {
         const [a, b, c] = winning_combination[i]
@@ -83,3 +58,28 @@ function restartButton() {
 }
 
 
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('click', function () {
+        if (someoneWon) return;
+
+        if (squares[i].textContent !== "") return;
+
+        squares[i].textContent = currentPlayer;
+
+        if (checkWin()) {
+            someoneWon = true;
+            endMessage.textContent = `Game Over!! ${currentPlayer} wins`;
+            return;
+        }
+        if (checkTie()) {
+            someoneWon = true;
+            endMessage.textContent = "It's a tie!";
+            return;
+        }
+        currentPlayer = currentPlayer === players[0]
+            ? players[1] : players[0];
+
+        endMessage.textContent = `${currentPlayer}'s turn`;
+    });
+}
